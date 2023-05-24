@@ -4,7 +4,8 @@ import React, { Fragment } from 'react';
 import {
   View,
   Text,
-  StyleSheet
+  StyleSheet,
+  Button,
 } from 'react-native';
 
 const App = () => {
@@ -14,6 +15,8 @@ const App = () => {
       <Text style={styles.titulo}>Administrador de Citas {''}
         <Text style={styles.tituloBold}>Veterinaria</Text>
       </Text>
+
+      <Button title='Nueva Cita' onPress={() => { console.log('Presionaste en el botón')}}></Button>
 
     </View>
 
