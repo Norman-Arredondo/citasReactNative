@@ -2,22 +2,32 @@
 import React, { Fragment } from 'react';
 
 import {
-  View,
+  SafeAreaView,
   Text,
+  StyleSheet
 } from 'react-native';
 
 const App = () => {
   return (
 
-    <Fragment>
-      <Text>Administrador de Citas {''}
+    <SafeAreaView>
+      <Text style={styles.titulo}>Administrador de Citas {''}
         <Text>Veterinaria</Text>
       </Text>
 
-    </Fragment>
+    </SafeAreaView>
 
   );
 };
 
+/**método .create para crear la hoja de estilos, dentro un objeto con todas las instrucciones CSS*/
+const styles = StyleSheet.create({
+  titulo: {
+    textAlign:'center',
+    fontSize: 30,
+    color: '#374151',
+    fontWeight: '600'
+  }
+});
 
 export default App;
