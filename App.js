@@ -1,5 +1,5 @@
 /* eslint-disable prettier/prettier */
-import React from 'react';
+import React, { Fragment } from 'react';
 
 import {
   View,
@@ -9,9 +9,13 @@ import {
 const App = () => {
   return (
 
-    <View>
-      <Text>Norman Arredondo</Text>
-    </View>
+    <Fragment>
+      <Text>Administrador de Citas {''}
+        <Text>Veterinaria</Text>
+      </Text>
+
+    </Fragment>
+
   );
 };
 
