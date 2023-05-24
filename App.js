@@ -2,16 +2,16 @@
 import React from 'react';
 
 import {
-  SafeAreaView,
+  View,
   Text,
 } from 'react-native';
 
 const App = () => {
   return (
-    /** Funciona para los dispositivos con Noch */
-    <SafeAreaView>
-      <Text>Hola Mundo</Text>
-    </SafeAreaView>
+
+    <View>
+      <Text>Norman Arredondo</Text>
+    </View>
   );
 };
 
