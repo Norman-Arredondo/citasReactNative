@@ -6,9 +6,14 @@ import {
   Text,
   StyleSheet,
   Button,
+  Pressable
 } from 'react-native';
 
 const App = () => {
+
+  const nuevaCitaHandler = () =>{
+    console.log('Diste Click');
+  }
   return (
 
     <View style={styles.container}>
@@ -16,7 +21,10 @@ const App = () => {
         <Text style={styles.tituloBold}>Veterinaria</Text>
       </Text>
 
-      <Button title='Nueva Cita' onPress={() => { console.log('Presionaste en el botón')}}></Button>
+      <Pressable onPressOut={ nuevaCitaHandler}>
+        <Text>Nueva Cita</Text>
+      </Pressable>
+      {/*<Button title='Nueva Cita' onPress={() => { console.log('Presionaste en el botón')}}></Button>*/}
 
     </View>
 
