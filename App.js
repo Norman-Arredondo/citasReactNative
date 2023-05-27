@@ -21,8 +21,9 @@ const App = () => {
         <Text style={styles.tituloBold}>Veterinaria</Text>
       </Text>
 
-      <Pressable onPressOut={ nuevaCitaHandler}>
-        <Text>Nueva Cita</Text>
+      <Pressable onPressOut={ nuevaCitaHandler} style ={styles.btnNuevaCita}>
+
+        <Text style= {styles.btnTextoNuevaCita}>Nueva Cita</Text>
       </Pressable>
       {/*<Button title='Nueva Cita' onPress={() => { console.log('Presionaste en el botón')}}></Button>*/}
 
@@ -36,7 +37,8 @@ const styles = StyleSheet.create({
 
   container: {
     backgroundColor: '#F3F4F6',
-    flex: 1
+    flex: 1,
+    marginTop: 20
   },
   titulo: {
     textAlign:'center',
@@ -47,6 +49,22 @@ const styles = StyleSheet.create({
   tituloBold: {
     fontWeight: '900',
     color: '#6D28D9',
+  },
+  btnNuevaCita:{
+    backgroundColor: '#6D28D9',
+    padding:15,
+    marginTop: 30,
+    //marginLeft: 20,
+    //marginRight: 20,
+    marginHorizontal: 20,
+    borderRadius: 10
+  },
+  btnTextoNuevaCita: {
+    textAlign: 'center',
+    color: '#FFF', //Color blanco
+    fontSize: 20,
+    fontWeight: '900',
+    textTransform: 'uppercase'
   }
 });
 
