@@ -6,7 +6,8 @@ import {
   Text,
   StyleSheet,
   Button,
-  Pressable
+  Pressable,
+  Modal
 } from 'react-native';
 
 const App = () => {
@@ -27,6 +28,9 @@ const App = () => {
       </Pressable>
       {/*<Button title='Nueva Cita' onPress={() => { console.log('Presionaste en el botón')}}></Button>*/}
 
+      <Modal animationType='slide' visible={false}>
+        <Text>Desde Modal</Text>
+      </Modal>
     </View>
 
   );
