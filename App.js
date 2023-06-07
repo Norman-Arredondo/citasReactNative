@@ -13,8 +13,7 @@ import {
 const App = () => {
 
   //Los Hooks se colocan en la parte superior
-  const [modalVisible, setModalVisible ] = useState([]);
-  console.log(modalVisible)
+  const [modalVisible, setModalVisible ] = useState(false);
 
   const nuevaCitaHandler = () =>{
     console.log('Diste Click');
@@ -26,13 +25,13 @@ const App = () => {
         <Text style={styles.tituloBold}>Veterinaria</Text>
       </Text>
 
-      <Pressable onPressOut={ nuevaCitaHandler} style ={styles.btnNuevaCita}>
+      <Pressable onPress={ () => setModalVisible(true)} style ={styles.btnNuevaCita}>
 
         <Text style= {styles.btnTextoNuevaCita}>Nueva Cita</Text>
       </Pressable>
       {/*<Button title='Nueva Cita' onPress={() => { console.log('Presionaste en el botón')}}></Button>*/}
 
-      <Modal animationType='slide' visible={false}>
+      <Modal animationType='slide' visible={modalVisible}>
         <Text>Desde Modal</Text>
       </Modal>
     </View>
