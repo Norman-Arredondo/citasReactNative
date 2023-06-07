@@ -1,5 +1,5 @@
 /* eslint-disable prettier/prettier */
-import React, { Fragment } from 'react';
+import React, { useState } from 'react';
 
 import {
   View,
@@ -11,6 +11,9 @@ import {
 } from 'react-native';
 
 const App = () => {
+
+  //Los Hooks se colocan en la parte superior
+  const [clientes, setClientes ] = useState([]);
 
   const nuevaCitaHandler = () =>{
     console.log('Diste Click');
@@ -42,13 +45,14 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: '#F3F4F6',
     flex: 1,
-    marginTop: 20
+    
   },
   titulo: {
     textAlign:'center',
     fontSize: 30,
     color: '#374151',
-    fontWeight: '600'
+    fontWeight: '600',
+    marginTop: 20
   },
   tituloBold: {
     fontWeight: '900',
