@@ -13,7 +13,8 @@ import {
 const App = () => {
 
   //Los Hooks se colocan en la parte superior
-  const [clientes, setClientes ] = useState([]);
+  const [modalVisible, setModalVisible ] = useState([]);
+  console.log(modalVisible)
 
   const nuevaCitaHandler = () =>{
     console.log('Diste Click');
