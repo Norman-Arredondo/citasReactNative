@@ -5,10 +5,11 @@ import {
   View,
   Text,
   StyleSheet,
-  Button,
-  Pressable,
-  Modal
+  Pressable
 } from 'react-native';
+
+import { Formulario } from './src/components/Formulario';
+
 
 const App = () => {
 
@@ -31,9 +32,8 @@ const App = () => {
       </Pressable>
       {/*<Button title='Nueva Cita' onPress={() => { console.log('Presionaste en el botón')}}></Button>*/}
 
-      <Modal animationType='slide' visible={modalVisible}>
-        <Text>Desde Modal</Text>
-      </Modal>
+      <Formulario /> 
+     
     </View>
 
   );
