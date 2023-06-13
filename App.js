@@ -16,9 +16,7 @@ const App = () => {
   //Los Hooks se colocan en la parte superior
   const [modalVisible, setModalVisible ] = useState(false);
 
-  const nuevaCitaHandler = () =>{
-    console.log('Diste Click por nuevaCitaHandler');
-  }
+  
   return (
 
     <View style={styles.container}>
@@ -35,7 +33,7 @@ const App = () => {
       <Formulario
       /**Varibale = prop con el mismo nombre */
        modalVisible = {modalVisible} 
-       nuevaCitaHandler = {nuevaCitaHandler}
+      
 
       /> 
      
