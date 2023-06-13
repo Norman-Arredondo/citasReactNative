@@ -1,5 +1,6 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import { Modal, Text, SafeAreaView, StyleSheet, TextInput, View, ScrollView } from 'react-native'
+import DatePicker from 'react-native-date-picker'
 
 export const Formulario = ({ modalVisible }) => {
 
@@ -7,6 +8,7 @@ export const Formulario = ({ modalVisible }) => {
     const [propietario, setPropietario] = useState('');
     const [email, setEmail] = useState('');
     const [telefono, setTelefono] = useState('');
+    const [fecha, setFecha] = useState(new Date());
     const [sintomas, setSintomas] = useState('');
 
 
@@ -21,32 +23,40 @@ export const Formulario = ({ modalVisible }) => {
                     <View style={styles.campo}>
                         <Text style={styles.label}>Nombre del Paciente</Text>
                         <TextInput style={styles.input} placeholder='Nombre del Paciente' placeholderTextColor={'#666'} value={paciente}
-                                    onChangeText={setPaciente}
+                            onChangeText={setPaciente}
                         />
                     </View>
 
                     <View style={styles.campo}>
                         <Text style={styles.label}>Nombre del Propietario</Text>
                         <TextInput style={styles.input} placeholder='Nombre del Propietario' placeholderTextColor={'#666'} value={propietario}
-                                    onChangeText={setPropietario} />
+                            onChangeText={setPropietario} />
                     </View>
 
                     <View style={styles.campo}>
                         <Text style={styles.label}>Email del Propietario</Text>
                         <TextInput style={styles.input} placeholder='Email' placeholderTextColor={'#666'} keyboardType='email-address' value={email}
-                                    onChangeText={setEmail}/>
+                            onChangeText={setEmail} />
                     </View>
 
                     <View style={styles.campo}>
                         <Text style={styles.label}>Teléfono del Propietario</Text>
                         <TextInput style={styles.input} placeholder='Teléfono' placeholderTextColor={'#666'} keyboardType='phone-pad' value={telefono}
-                                    onChangeText={setTelefono} maxLength={10}/>
+                            onChangeText={setTelefono} maxLength={10} />
+                    </View>
+
+                    <View style={styles.campo}>
+                        <Text style={styles.label}>Fecha de Alta</Text>
+                        <View style={styles.fechaContenedor}>
+                            <DatePicker date={fecha} locale='es'  onDateChange={(date) => setFecha(date)} />
+                        </View>
+
                     </View>
 
                     <View style={styles.campo}>
                         <Text style={styles.label}>Síntomas</Text>
                         <TextInput style={[styles.input, styles.sintomasInput]} placeholder='Síntomas del paciente' placeholderTextColor={'#666'} value={sintomas}
-                                    onChangeText={setSintomas} multiline={true} numberOfLines={4}/>
+                            onChangeText={setSintomas} multiline={true} numberOfLines={4} />
                     </View>
 
 
@@ -92,5 +102,9 @@ const styles = StyleSheet.create({
     },
     sintomasInput: {
         height: 100
+    },
+    fechaContenedor: {
+        backgroundColor: '#FFF',
+        borderRadius: 10
     }
 });
