@@ -17,7 +17,7 @@ const App = () => {
   const [modalVisible, setModalVisible ] = useState(false);
 
   const nuevaCitaHandler = () =>{
-    console.log('Diste Click');
+    console.log('Diste Click por nuevaCitaHandler');
   }
   return (
 
@@ -32,7 +32,12 @@ const App = () => {
       </Pressable>
       {/*<Button title='Nueva Cita' onPress={() => { console.log('Presionaste en el botón')}}></Button>*/}
 
-      <Formulario /> 
+      <Formulario
+      /**Varibale = prop con el mismo nombre */
+       modalVisible = {modalVisible} 
+       nuevaCitaHandler = {nuevaCitaHandler}
+
+      /> 
      
     </View>
 
