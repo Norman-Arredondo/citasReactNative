@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Modal, Text, SafeAreaView, StyleSheet, TextInput, View, ScrollView, Pressable } from 'react-native'
+import { Modal, Text, SafeAreaView, StyleSheet, TextInput, View, ScrollView, Pressable, Alert } from 'react-native'
 import DatePicker from 'react-native-date-picker'
 
 export const Formulario = ({ modalVisible, setModalVisible }) => {
@@ -10,6 +10,19 @@ export const Formulario = ({ modalVisible, setModalVisible }) => {
     const [telefono, setTelefono] = useState('');
     const [fecha, setFecha] = useState(new Date());
     const [sintomas, setSintomas] = useState('');
+
+
+    const handleCita = () => {
+        //Validación
+
+        if ([paciente, propietario, email, fecha, sintomas].includes('')) {
+            Alert.alert('Error', 'Todos los campos son obligatorios', [{text: 'OK'}]); //Toma 3 argumentos. encabezado, cuerpo y mensaje
+
+            return;
+        }
+    }
+
+    console.log('Agregando paciente...')
 
 
     return (
@@ -64,7 +77,7 @@ export const Formulario = ({ modalVisible, setModalVisible }) => {
                             onChangeText={setSintomas} multiline={true} numberOfLines={4} />
                     </View>
 
-                    <Pressable style={styles.btnNuevaCita}>
+                    <Pressable style={styles.btnNuevaCita} onPress= {handleCita}>
                         <Text style= {styles.btnNuevaCitaTexto}>Agregar Paciente</Text>
                     </Pressable>
 
