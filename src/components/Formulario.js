@@ -31,6 +31,13 @@ export const Formulario = ({ modalVisible, setModalVisible, setPacientes, pacien
 
         setPacientes([...pacientes, nuevoPaciente]);
         setModalVisible(!modalVisible);
+
+        setPaciente('');
+        setPropietario('');
+        setEmail('');
+        setTelefono('');
+        setFecha(new Date());
+        setSintomas('');
     }
 
     return (
