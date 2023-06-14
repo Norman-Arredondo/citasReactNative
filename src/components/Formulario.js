@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-import { Modal, Text, SafeAreaView, StyleSheet, TextInput, View, ScrollView } from 'react-native'
+import { Modal, Text, SafeAreaView, StyleSheet, TextInput, View, ScrollView, Pressable } from 'react-native'
 import DatePicker from 'react-native-date-picker'
 
-export const Formulario = ({ modalVisible }) => {
+export const Formulario = ({ modalVisible, setModalVisible }) => {
 
     const [paciente, setPaciente] = useState('');
     const [propietario, setPropietario] = useState('');
@@ -19,6 +19,11 @@ export const Formulario = ({ modalVisible }) => {
                     <Text style={styles.titulo}>Nueva {''}
                         <Text style={styles.tituloBold}>Cita</Text>
                     </Text>
+
+                    <Pressable style= {styles.btnCancelar} onPress={() => setModalVisible(!modalVisible)} >
+                        <Text style= {styles.btnCancelarTexto}> X Cancelar</Text>
+                    </Pressable>
+
 
                     <View style={styles.campo}>
                         <Text style={styles.label}>Nombre del Paciente</Text>
@@ -80,6 +85,23 @@ const styles = StyleSheet.create({
     },
     tituloBold: {
         fontWeight: 900
+    },
+    btnCancelar: {
+        
+        marginVertical: 20,
+        backgroundColor: 'red',
+        marginHorizontal: 30,
+        padding: 10,
+        borderRadius: 10,
+        borderWidth: 1,
+        borderColor: '#FFF'
+    },
+    btnCancelarTexto: {
+        color: '#FFF',
+        textAlign: 'center',
+        fontWeight: '900',
+        fontSize: 15,
+        textTransform: 'uppercase'
     },
     input: {
         backgroundColor: '#fff',

@@ -33,6 +33,7 @@ const App = () => {
       <Formulario
       /**Varibale = prop con el mismo nombre */
        modalVisible = {modalVisible} 
+       setModalVisible = {setModalVisible}
       
 
       /> 
