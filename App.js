@@ -15,6 +15,7 @@ const App = () => {
 
   //Los Hooks se colocan en la parte superior
   const [modalVisible, setModalVisible ] = useState(false);
+  const [pacientes, setPacientes] = useState([]);
 
   
   return (
@@ -34,6 +35,8 @@ const App = () => {
       /**Varibale = prop con el mismo nombre */
        modalVisible = {modalVisible} 
        setModalVisible = {setModalVisible}
+       pacientes = {pacientes}
+       setPacientes = {setPacientes}
       
 
       /> 

@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Modal, Text, SafeAreaView, StyleSheet, TextInput, View, ScrollView, Pressable, Alert } from 'react-native'
 import DatePicker from 'react-native-date-picker'
 
-export const Formulario = ({ modalVisible, setModalVisible }) => {
+export const Formulario = ({ modalVisible, setModalVisible, setPacientes, pacientes}) => {
 
     const [paciente, setPaciente] = useState('');
     const [propietario, setPropietario] = useState('');
@@ -20,10 +20,17 @@ export const Formulario = ({ modalVisible, setModalVisible }) => {
 
             return;
         }
+
+        const nuevoPaciente = {
+            paciente,
+            propietario,
+            email,
+            fecha,
+            sintomas
+        };
+
+        setPacientes([...pacientes, nuevoPaciente])
     }
-
-    console.log('Agregando paciente...')
-
 
     return (
         <Modal animationType='slide' visible={modalVisible}>
