@@ -31,6 +31,7 @@ const App = () => {
       </Pressable>
       {/*<Button title='Nueva Cita' onPress={() => { console.log('Presionaste en el botón')}}></Button>*/}
 
+      {pacientes.length === 0 ? <Text style = {styles.noPacientes}>No hay pacientes aún</Text> : <Text>Sí hay pacientes </Text>}
       <Formulario
       /**Varibale = prop con el mismo nombre */
        modalVisible = {modalVisible} 
@@ -80,6 +81,13 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: '900',
     textTransform: 'uppercase'
+  },
+  noPacientes: {
+    marginTop: 40,
+    textAlign: 'center',
+    fontSize: 24,
+    fontWeight: '600',
+    color: 'black'
   }
 });
 
