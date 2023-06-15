@@ -19,9 +19,38 @@ export const Paciente = ({ item }) => {
 
 
     return (
-        <View>
-            <Text> {paciente} </Text>
-            <Text> {formatearFecha(fecha)} </Text>
+        <View style={styles.contenedor}>
+            <Text style={styles.label}> Paciente: </Text>
+            <Text style={styles.texto}> {paciente} </Text>
+            <Text style={styles.fecha}> {formatearFecha(fecha)} </Text>
         </View>
     )
 }
+
+const styles = StyleSheet.create({
+    contenedor: {
+        backgroundColor: '#fff',
+        padding: 20,
+        marginBottom: 10,
+        borderRadius: 10,
+        borderColor: '#94A3B8',
+        borderWidth: 1
+    },
+    label: {
+        color: '#374151',
+        textTransform: 'uppercase',
+        fontWeight: '700',
+        marginBottom: 10
+    },
+    texto: {
+        color: '#6D28D9',
+        fontSize: 20,
+        fontWeight: '700',
+        
+    }, 
+    fecha: {
+        color: '#374151',
+        
+    }
+
+});
