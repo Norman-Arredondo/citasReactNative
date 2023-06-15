@@ -37,7 +37,7 @@ const App = () => {
       {pacientes.length === 0 ?
         <Text style={styles.noPacientes}>No hay pacientes aún</Text>
         :
-        <FlatList
+        <FlatList style= {styles.listado}
           data = {pacientes}
           keyExtractor={(item) => item.id}
           renderItem= {({item}) => {
@@ -108,6 +108,10 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: '600',
     color: 'black'
+  }, 
+  listado: {
+    marginTop: 50,
+    marginHorizontal: 30
   }
 });
 
