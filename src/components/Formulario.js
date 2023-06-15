@@ -22,6 +22,7 @@ export const Formulario = ({ modalVisible, setModalVisible, setPacientes, pacien
         }
 
         const nuevoPaciente = {
+            id: Date.now(),
             paciente,
             propietario,
             email,
