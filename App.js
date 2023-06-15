@@ -10,7 +10,7 @@ import {
 } from 'react-native';
 
 import { Formulario } from './src/components/Formulario';
-import {Paciente} from './src/components/Paciente';
+import { Paciente } from './src/components/Paciente';
 
 
 const App = () => {
@@ -18,6 +18,12 @@ const App = () => {
   //Los Hooks se colocan en la parte superior
   const [modalVisible, setModalVisible] = useState(false);
   const [pacientes, setPacientes] = useState([]);
+  const [paciente, setPaciente] = useState({});
+
+  const pacienteEditar = id => {
+    const pacienteEditar = pacientes.filter(paciente => paciente.id === id); //Retorna un arreglo
+    setPaciente(pacienteEditar[0]);
+  }
 
 
   return (
@@ -37,13 +43,18 @@ const App = () => {
       {pacientes.length === 0 ?
         <Text style={styles.noPacientes}>No hay pacientes aún</Text>
         :
-        <FlatList style= {styles.listado}
-          data = {pacientes}
+        <FlatList style={styles.listado}
+          data={pacientes}
           keyExtractor={(item) => item.id}
-          renderItem= {({item}) => {
+          renderItem={({ item }) => {
 
-            return(
-              <Paciente item = {item}/>
+            return (
+              <Paciente
+                item={item}
+                setModalVisible={setModalVisible}
+                pacienteEditar = {pacienteEditar}
+              />
+
             );
           }}
 
@@ -108,7 +119,7 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: '600',
     color: 'black'
-  }, 
+  },
   listado: {
     marginTop: 50,
     marginHorizontal: 30
