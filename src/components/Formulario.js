@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Modal, Text, SafeAreaView, StyleSheet, TextInput, View, ScrollView, Pressable, Alert } from 'react-native'
 import DatePicker from 'react-native-date-picker'
 
-export const Formulario = ({ modalVisible, setModalVisible, setPacientes, pacientes}) => {
+export const Formulario = ({ modalVisible, setModalVisible, setPacientes, pacientes, paciente: pacienteObj}) => {
 
     const [paciente, setPaciente] = useState('');
     const [propietario, setPropietario] = useState('');
@@ -11,6 +11,7 @@ export const Formulario = ({ modalVisible, setModalVisible, setPacientes, pacien
     const [fecha, setFecha] = useState(new Date());
     const [sintomas, setSintomas] = useState('');
 
+    console.log(pacienteObj)
 
     const handleCita = () => {
         //Validación
